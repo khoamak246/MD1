@@ -1,0 +1,27 @@
+div {
+    background-color: yellow;
+    width: 40%;
+}
+h2 {
+    background-color: aquamarine;
+    color: blue;
+    margin-bottom: 4px;
+}
+td {
+    padding-bottom: 5px;
+}
+input#name {
+    width: 200%;
+}
+input#date {
+    width: 60%;
+}
+textarea#address {
+    width: 175%;
+}
+input#email {
+    width: 75%;
+}
+input#phone {
+    width: 75%;
+}

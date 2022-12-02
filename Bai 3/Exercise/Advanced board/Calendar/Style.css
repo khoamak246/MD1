@@ -1,0 +1,38 @@
+h1  {
+    color: blue;
+    text-align: center;
+}
+td {
+    border: 1px solid grey;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+tr, td, th {
+    padding: 5px;
+}
+#cn {
+    background-color: red;
+}
+#t7 {
+    background-color: blue;
+}
+#oran {
+    background-color: orange;
+}
+
+#cn, #t7, #oran {
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+}
+#sun {
+    color: red;
+}
+#sat {
+    color: blue;
+}
+th {
+    font-weight: 100;
+}
