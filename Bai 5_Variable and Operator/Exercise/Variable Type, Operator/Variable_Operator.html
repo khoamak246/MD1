@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MD1 _ Bai 5 _ Variable Type - Operator</title>
+</head>
+<body>
+<!--Part 1 _ Average -->
+<div>
+  <h1>Part 1 _ Average</h1>
+  <fieldset>
+    <legend>Average:</legend>
+    <label for="toan">Nhập điểm Toán:</label>
+    <input type="number" id="toan" value="0">
+    <label for="ly">Nhập điểm môn Lý:</label>
+    <input type="number" id="ly" value="0">
+    <label for="hoa">Nhập điểm môn Hóa:</label>
+    <input type="number" id="hoa" value="0">
+    <button onclick="average()">Submit</button>
+    <div style="text-align: center" id="result"></div>
+  </fieldset>
+</div>
+
+<!--Part 2 _ Change  Celsius to Fahrenheit-->
+<div>
+  <h1>Part 2 _ Change Celsius to Fahrenheit</h1>
+  <fieldset>
+    <legend>Chane Celsius -> Fahrenheit:</legend>
+    <label for="do-c">Nhap do C:</label>
+    <input type="number" id="do-c" value="0">
+    <button onclick="changeC()">Submit</button>
+    <span style="text-align: center" id="result2"></span>
+  </fieldset>
+</div>
+
+<!--Part 3 + 4 _ Perimeter and Area Circle-->
+<div>
+  <h1>Part 3 + 4 _ Perimeter and Area Circle</h1>
+  <fieldset>
+    <legend>Perimeter and Area Circle:</legend>
+    <label for="R">Nhap ban kinh:</label>
+    <input type="number" id="R" value="0">
+    <button onclick="caculate()">Submit</button>
+    <span style="text-align: center" id="result3"></span>
+  </fieldset>
+</div>
+<script src="myScript.js"></script>
+</body>
+</html>

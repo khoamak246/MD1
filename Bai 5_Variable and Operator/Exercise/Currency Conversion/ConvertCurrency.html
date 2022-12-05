@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MD1 _ Bai 5 _ Convert-Currency</title>
+    <style>
+      div {
+        display: inline-block;
+        text-align: center;
+      }
+      select {
+        width: 100px;
+      }
+      legend {
+        text-align: left;
+      }
+      .layout {
+        margin-left: 30px;
+      }
+      div#result {
+        display: block;
+        margin-top: 20px;
+      }
+      button {
+        background-color: plum;
+        border: 1px solid blue;
+        border-radius: 10%;
+      }
+    </style>
+</head>
+<body>
+<div>
+  <fieldset>
+    <legend>Convert Currency</legend>
+    <div>
+      <label for="amount">Amount</label><br>
+      <input type="number" id="amount">
+    </div>
+
+    <div class="layout">
+      <label for="from">From Currency</label> <br>
+      <select name="from" id="from" onchange="From_To()">
+        <option value="USD">USD</option>
+        <option value="VietNam">Viet Nam</option>
+      </select>
+    </div>
+
+    <div class="layout">
+      <label for="to">To Currency</label> <br>
+      <select onchange="To_From()" name="to" id="to">
+        <option value="VietNam">Viet Nam</option>
+        <option value="USD">USD</option>
+      </select>
+    </div>
+
+    <div class="layout">
+      <button type="submit" onclick="doingConvert()">Convert</button>
+    </div>
+
+    <div id="result"></div>
+  </fieldset>
+</div>
+
+<script src="myScript.js"></script>
+</body>
+</html>
