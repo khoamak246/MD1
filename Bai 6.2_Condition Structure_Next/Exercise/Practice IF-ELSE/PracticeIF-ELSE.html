@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MD1 _ BAI 6.2 _ EXERCISE _ IF-ELSE-1</title>
+    <style>
+        fieldset {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<!-- Kiem tra chia het -->
+<fieldset>
+  <legend>Kiem tra chia het:</legend>
+    <label for="so-a">Nhap so a:</label>
+  <input type="number" id="so-a">
+    <label for="so-b">Nhap so b:</label>
+  <input type="number" id="so-b">
+  <button type="submit" id="subBtn" onclick="CheckMod()">Click me!</button>
+</fieldset>
+
+<!--Kiem tra tuoi vao lop 10 -->
+<fieldset>
+    <legend>Kiem tra tuoi vao lop 10:</legend>
+    <label for="tuoi">Nhap so tuoi cua ban:</label>
+    <input type="number" id="tuoi">
+    <button type="submit" id="subBtn1" onclick="YearOld()">Click me!</button>
+</fieldset>
+
+<!-- So sanh voi 0 -->
+<fieldset>
+    <legend>So sanh voi 0:</legend>
+    <label for="So_so_sanh">Nhap so:</label>
+    <input type="number" id="So_so_sanh">
+    <button type="submit" id="subBtn2" onclick="check0()">Click me!</button>
+</fieldset>
+
+<!-- Tim so lon nhat -->
+<fieldset>
+    <legend>Tim gia tri lon nhat:</legend>
+    <label for="nhapa">Nhap so a:</label>
+    <input type="number" id="nhapa">
+    <label for="nhapb">Nhap so b:</label>
+    <input type="number" id="nhapb">
+    <label for="nhapc">Nhap so c:</label>
+    <input type="number" id="nhapc">
+    <button type="submit" id="subBtn3" onclick="FindValue()">Click me!</button>
+</fieldset>
+
+<!--Check HSG-->
+<fieldset>
+    <legend>Kiem tra HSG:</legend>
+    <label for="diem15">Nhap diem 15 phut:</label>
+    <input type="number" id="diem15">
+    <label for="diem45">Nhap diem 45 phut:</label>
+    <input type="number" id="diem45">
+    <label for="diemend">Nhap diem cuoi ki:</label>
+    <input type="number" id="diemend">
+    <button type="submit" id="subBtn4" onclick="checkHSG()">Click me!</button>
+</fieldset>
+
+<!--Tinh hoa hong -->
+<fieldset>
+    <legend>Tinh tien Hoa Hong:</legend>
+    <label for="Nhaptien">Nhap so tien du an:</label>
+    <input type="number" id="Nhaptien">
+    <button type="submit" id="subBtn5" onclick="checkHH()">Click me!</button>
+</fieldset>
+
+<!-- Check phone call money -->
+<fieldset>
+    <legend>Tinh tien cuoc dien thoai:</legend>
+    <label for="time">Nhap thoi gian cuoc goi (giay):</label>
+    <input type="number" id="time">
+    <button type="submit" id="subBtn6" onclick="checkPhone()">Click me!</button>
+</fieldset>
+
+<!-- Script -->
+<script src="myScript.js"></script>
+</body>
+</html>
+
+

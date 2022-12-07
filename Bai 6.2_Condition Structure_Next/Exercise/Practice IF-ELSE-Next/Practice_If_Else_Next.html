@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MD1 _ BAI 6.2 _ EXERCISE _ IF-ELSE-NEXT</title>
+    <style>
+        fieldset {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<!-- Change C -> F -->
+<fieldset>
+  <legend>Doi tu C -> F</legend>
+    <label for="doC">Nhap do C:</label>
+  <input type="number" id="doC">
+  <button id="btn1" onclick="Change_C_to_F()">Click me!</button>
+</fieldset>
+
+<!-- Change m to feet -->
+<fieldset>
+    <legend>Doi m sang feet:</legend>
+    <label for="So_m">Nhap so m:</label>
+    <input type="number" id="So_m">
+    <button id="btn2" onclick="Change_M_to_F()">Click me!</button>
+</fieldset>
+
+<!-- Caculate S square-->
+<fieldset>
+    <legend>Tinh dien tich hinh vuong:</legend>
+    <label for="nhapa">Nhap canh hinh vuong:</label>
+    <input type="number" id="nhapa">
+    <button id="btn3" onclick="S_Square()">Click me!</button>
+</fieldset>
+
+<!--Tinh dien tich chu nhat -->
+<fieldset>
+    <legend>Tinh dien tich hinh chu nhat:</legend>
+    <label for="chieudai">Nhap canh chieu dai:</label>
+    <input type="number" id="chieudai">
+    <label for="chieurong">Nhap canh chieu rong:</label>
+    <input type="number" id="chieurong">
+    <button id="btn4" onclick="Schunhat()">Click me!</button>
+</fieldset>
+
+<!-- Tinh S tam giac -->
+<fieldset>
+    <legend>Tinh dien tich hinh tam giac:</legend>
+    <label for="canha">Nhap canh a:</label>
+    <input type="number" id="canha">
+    <label for="canhb">Nhap canh b:</label>
+    <input type="number" id="canhb">
+    <button id="btn5" onclick="Stamgiac()">Click me!</button>
+</fieldset>
+
+<!--Phuong trinh bac 1 -->
+<fieldset>
+    <legend>Giai pt ax + b = 0:</legend>
+    <label for="Nhapso_a">Nhap so a:</label>
+    <input type="number" id="Nhapso_a">
+    <label for="Nhapso_b">Nhap so b:</label>
+    <input type="number" id="Nhapso_b">
+    <button id="btn6" onclick="GiaiPT1()">Click me!</button>
+</fieldset>
+
+<!--Phuong trinh bac 2 -->
+<fieldset>
+    <legend>Giai pt ax<sup>2</sup> + bx + c = 0:</legend>
+    <label for="Nhapsoa">Nhap so a:</label>
+    <input type="number" id="Nhapsoa">
+    <label for="Nhapsob">Nhap so b:</label>
+    <input type="number" id="Nhapsob">
+    <label for="Nhapsoc">Nhap so c:</label>
+    <input type="number" id="Nhapsoc">
+    <button id="btn7" onclick="GiaiPT2()">Click me!</button>
+</fieldset>
+
+<!-- Check Integer -->
+<fieldset>
+    <legend>Kiem tra tuoi Human:</legend>
+    <label for="Nhaptuoi">Nhap so a:</label>
+    <input type="number" id="Nhaptuoi">
+    <button id="btn8" onclick="checkTuoi()">Click me!</button>
+</fieldset>
+
+<!-- Check Tam giac-->
+<fieldset>
+    <legend>Kiem tra tam giac:</legend>
+    <label for="canh1">Nhap canh 1:</label>
+    <input type="number" id="canh1">
+    <label for="canh2">Nhap canh 2:</label>
+    <input type="number" id="canh2">
+    <label for="canh3">Nhap canh 3:</label>
+    <input type="number" id="canh3">
+    <button id="btn9" onclick="Kiemtra()">Click me!</button>
+</fieldset>
+
+<!-- Tinh tien dien -->
+<fieldset>
+    <legend>Tinh tien dien:</legend>
+    <label for="Sodien">Nhap so dien:</label>
+    <input type="number" id="Sodien">
+    <button id="btn10" onclick="CaculateDien()">Click me!</button>
+</fieldset>
+
+<!--Thue thu nhap ca nhan-->
+<fieldset>
+    <legend>Tinh thue thu nhap ca nhan:</legend>
+    <label for="tongthu">Tong thu nhap:</label>
+    <input type="number" id="tongthu">
+    <button id="btn11" onclick="Thue()">Click me!</button>
+</fieldset>
+
+<!--Lai suat ngan hang-->
+<fieldset>
+    <legend>Tinh lai suat ngan hang:</legend>
+    <label for="von">Nhap von:</label>
+    <input type="number" id="von">
+    <label for="kihan">Ki han:</label>
+    <input type="number" id="kihan">
+    <label for="lai">Lai suat:</label>
+    <input type="number" id="lai">
+    <label for="dagui">Da gui:</label>
+    <input type="number" id="dagui">
+    <button id="btn12" onclick="TinhLai()">Click me!</button>
+</fieldset>
+
+
+<!-- Script -->
+<script src="myScript.js"></script>
+</body>
+</html>
