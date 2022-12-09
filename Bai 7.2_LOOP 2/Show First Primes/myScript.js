@@ -9,7 +9,7 @@ while (count < inputNum){
             Pnum++
         }
     } if (Pnum == 1){
-        console.log("so" + N)
+        document.write(N);
         count++
     }
     N++
