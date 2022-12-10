@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>MD1 _ BAI 8.2 _ EXERCISE _ CARO-GAME</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        div {
+            margin: auto auto 10px auto;
+        }
+    </style>
 </head>
 <body>
+<h3>Caro Game!</h3>
 <div id="board"></div>
-<button onclick="Play()"></button>
+<div>
+    <button id="btnP1" onclick="Player1()">Player 1</button>
+    <button id="btnP2" onclick="Player2()" disabled>Player 2</button>
+    <br>
+</div>
+<div>
+    <button id="resBtn" onclick="reset()" disabled style="display: none">Reset Game!</button>
+</div>
 
 <!-- Script -->
 <script src="myScript.js"></script>

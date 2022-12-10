@@ -10,3 +10,5 @@ for (let r = 1; r <= 9; r++) {
 }
 result = result + "</table>"
 document.write(result)
+
+
