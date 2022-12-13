@@ -9,12 +9,12 @@ h2 {
 div {
     text-align: center;
 }
-#add_product_container {
+#add_product_container, #search_product_container {
     width: 40%;
     padding: 20px;
     background-color: #F0F0F0;
 }
-#AddNewProduct {
+#AddNewProduct, #search_Product{
     width: 70%;
     padding: 10px 20px;
     border-radius: 4px;
@@ -49,7 +49,7 @@ span {
 }
 
 /*Content table*/
-#product_board {
+#product_board, #Search_row {
     width: 70%;
 }
 table {
@@ -63,4 +63,14 @@ table, tr, td {
 
 tr:nth-child(even) {
     background-color: #F0F0F0;
+}
+#recommend {
+    background-color: white;
+    width: 80%;
+    padding: 5px;
+    margin: auto;
+    display: none;
+}
+.Recommend_Option {
+    border: 1px solid black;
 }

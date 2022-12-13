@@ -4,7 +4,8 @@ let GetAddProductName = document.getElementById("AddNewProduct");
 let SubmitAddProductButton = document.getElementById("add_btn");
 let DisplayProduct = document.getElementById("product_board");
 let NumberOfProduct = document.getElementById("number_of_product");
-
+let InputSearchProduct = document.getElementById("search_Product");
+let RecommendList = document.getElementById("recommend");
 // Add Product
 GetAddProductName.addEventListener("keydown",function (keyEvt) {
     if (GetAddProductName.value !== "") {
@@ -25,6 +26,46 @@ SubmitAddProductButton.addEventListener("click", function () {
         GetAddProductName.value = "";
     }
 })
+
+// Search Product
+InputSearchProduct.addEventListener("input",function () {
+    let RecommendDisplay = "";
+    for (let i = 0; i < ProductContainerArray.length; i++) {
+        if (ProductContainerArray[i].toLowerCase().includes(InputSearchProduct.value.toLowerCase())) {
+            RecommendDisplay = RecommendDisplay + "<div onclick='fill(this.innerHTML)' class='Recommend_Option'>" + ProductContainerArray[i] + "</div>";
+        }
+    }
+    RecommendList.innerHTML = RecommendDisplay;
+    if (InputSearchProduct.value === ""){
+        RecommendList.innerHTML = "";
+        RecommendList.style.display = "none";
+        DisplayProduct.style.display = "block";
+        document.getElementById("Search_row").style.display = "none";
+    }
+    if (InputSearchProduct.value.length > 0){
+        RecommendList.style.display = "block";
+    }
+})
+function fill(product) {
+    InputSearchProduct.value = product;
+    RecommendList.style.display = "none";
+    RecommendList.innerHTML = "";
+}
+
+    InputSearchProduct.addEventListener("keydown",function (keyEvt) {
+        if (keyEvt.keyCode === 13){
+            let TableRowLocation = ProductContainerArray.indexOf(InputSearchProduct.value);
+            let result = document.getElementsByTagName("tr").item(TableRowLocation).innerHTML
+            console.log(result);
+            document.getElementById("Search_row").style.display = "block";
+            document.getElementById("Search_row").innerHTML = "<table>" + "<tr>" + result + "</tr>" +"</table>"
+            DisplayProduct.style.display = "none";
+
+        }
+    })
+
+
+
 
 // Display Table
 function display_product_table(array) {

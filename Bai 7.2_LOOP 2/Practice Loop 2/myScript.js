@@ -44,30 +44,29 @@ function Tam_giac_2() {
 
 // Ve tam giac 3
 function tam_giac_3() {
-    let y = 1
-    for (let i = 5; i >= 0; i--) {
-        for (let j = 0; j < i; j++) {
-            document.write("&nbsp;&nbsp;")
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            if (j >= 4-i){
+                document.write("*")
+            } else {
+                document.write("&nbsp;&nbsp;")
+            }
         }
-        for (let k = 0; k < y; k++) {
-            document.write("*")
-        }
-        y++
         document.write("<br>");
     }
+
 }
 
 // Ve tam giac 4
 function tam_giac_4() {
-    let y = 5
     for (let i = 0; i < 5; i++) {
-        for (let j = 0; j < i; j++) {
-            document.write("&nbsp;&nbsp;")
+        for (let j = 0; j < 5; j++) {
+            if (i <= j){
+                document.write("*")
+            } else {
+                document.write("&nbsp;&nbsp;")
+            }
         }
-        for (let k = 0; k < y; k++) {
-            document.write("*")
-        }
-        y--
         document.write("<br>");
     }
 }
