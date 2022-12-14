@@ -1,5 +1,5 @@
 let count = 0;
-let fakeInput = ["T", "ô", "i", " ", "L", "à", " ", "M", "ộ", "t", " ", "K", "ẻ"," ", "n", "g", "ố", "c"]
+let fakeInput = ["T", "ô", "i", " ", "L", "à", " ", "M", "ộ", "t", " ", "K", "ẻ"," ", "N", "g", "ố", "c"]
 let textArea = document.getElementById('inputArea')
 let text = "";
 textArea.addEventListener("input",function () {
