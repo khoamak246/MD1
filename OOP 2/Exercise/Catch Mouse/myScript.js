@@ -154,6 +154,6 @@ function catchOk() {
     alert(Jerry.getSqueal());
     alert(Tom.getCatch_Mouse());
     alert(Tom.getEat());
-    Jerry.setStatus("DIE");
+    Jerry.setStatus("DIED");
     alert("Jerry " + Jerry.getStatus());
 }
