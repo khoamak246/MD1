@@ -8,15 +8,20 @@ let ProductArr = [];
 let list_search_recommend = [];
 
 InputBtn.addEventListener("click",function () {
-    ProductArr.push(InputBoxValue.value);
-    InputBoxValue.value = '';
-    display_product_table(ProductArr);
-})
-InputBoxValue.addEventListener("keydown", function (KeyEvt) {
-    if (KeyEvt.keyCode === 13) {
+    if (InputBoxValue.value.trim() !== '') {
         ProductArr.push(InputBoxValue.value);
+        console.log(InputBoxValue.value)
         InputBoxValue.value = '';
         display_product_table(ProductArr);
+    }
+})
+InputBoxValue.addEventListener("keydown", function (KeyEvt) {
+    if (InputBoxValue.value.trim() !== '') {
+        if (KeyEvt.keyCode === 13) {
+            ProductArr.push(InputBoxValue.value);
+            InputBoxValue.value = '';
+            display_product_table(ProductArr);
+        }
     }
 })
 
@@ -77,7 +82,6 @@ function search_product() {
         list_search_recommend = []
         for (let i = 0; i < ProductArr.length; i++) {
             if (ProductArr[i].toLowerCase().search(InputSearchBox.value.toLowerCase()) !== -1){
-                console.log(ProductArr[i].toLowerCase().search(InputSearchBox.value.toLowerCase()))
                 list_search_recommend.push(ProductArr[i]);
             }
         }

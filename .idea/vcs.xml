@@ -4,5 +4,6 @@
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/MD1-CRUD-Search" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OOP 2/Exercise/Advance Caro Game/MD1-CARO-GAME" vcs="Git" />
   </component>
 </project>
