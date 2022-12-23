@@ -2,11 +2,15 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = 1024;
 canvas.height = 567;
+let scrollOffset = 0;
+let checkLose = 3;
+
+startGame();
 
 function animate() {
-    requestAnimationFrame(animate);
+    let start = requestAnimationFrame(animate);
     ctx.fillStyle = "white"
-    ctx.fillRect(0,0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // draw background and hill
     genericObjs.forEach(function (genericObj) {
@@ -18,51 +22,58 @@ function animate() {
         platform.draw();
     })
 
-    // npcPrincess.draw();
+    lifeContent(checkLose)
+
+    npcPrincess.draw();
 
     // draw Character
     character.update();
 
 
-    // if (character.position.x + character.height + character.velocity.x >= npcPrincess.position.x
-    //     && character.position.y + character.height + character.velocity.y >= npcPrincess.position.y) {
-    //     character.velocity.x = 0;
-    //     character.velocity.y = 0;
-    //     console.log("You Win")
-    // } else {
+    if (character.position.x + character.height >= npcPrincess.position.x + 60
+        && character.position.y + character.height >= npcPrincess.position.y + 30
+        && character.position.x <= npcPrincess.width + npcPrincess.position.x - 30) {
+        cancelAnimationFrame(start)
+        winEvent()
+    } else {
         if (keys.right.pressed && character.position.x < 400) {
             character.velocity.x = 5;
-        } else if (keys.left.pressed && character.position.x > 50) {
+        } else if (keys.left.pressed && character.position.x > 10) {
             character.velocity.x = -5;
         } else {
             character.velocity.x = 0;
-            if (keys.right.pressed) {
+            if (keys.right.pressed && scrollOffset < 5370) {
                 genericObjs.forEach(function (genericObj) {
                     genericObj.draw();
-                    genericObj.position.x -=3;
+                    genericObj.position.x -= 3;
                 })
                 platforms.forEach(function (platform) {
                     platform.draw();
-                    platform.position.x -=5;
+                    platform.position.x -= 5;
                 })
-                // npcPrincess.position.x -= 5;
-                // npcPrincess.draw();
+                npcPrincess.position.x -= 5;
+                npcPrincess.draw();
                 character.draw();
-            } else if (keys.left.pressed) {
+                scrollOffset += 5;
+                lifeContent(checkLose)
+                console.log("hello" + scrollOffset)
+            } else if (keys.left.pressed && scrollOffset > 0) {
                 genericObjs.forEach(function (genericObj) {
                     genericObj.draw();
-                    genericObj.position.x +=3;
+                    genericObj.position.x += 3;
                 })
                 platforms.forEach(function (platform) {
                     platform.draw();
                     platform.position.x += 5;
                 })
-                // npcPrincess.position.x += 5;
-                // npcPrincess.draw();
+                npcPrincess.position.x += 5;
+                npcPrincess.draw();
                 character.draw();
+                scrollOffset -= 5;
+                lifeContent(checkLose)
             }
         }
-    // }
+    }
 
 
     platforms.forEach(function (platform) {
@@ -75,18 +86,14 @@ function animate() {
     })
 
     if (character.position.y >= canvas.height) {
-        character.position.x = 100;
-        character.position.y = 100;
-
-        platforms =  [new Platform({x:-1, y:470, image:platformImg}),
-            new Platform({x:platformImg.width - 3, y:470, image:platformImg}),
-            new Platform({x:2 * platformImg.width + 130, y:470, image:platformImg})];
-
-
-        genericObjs = [new Platform({x: -1, y:-1, image:backgroundImg}), new Platform({x: -1, y:-1, image:hillImg})];
-        npcPrincess.position.x = 1500;
-        npcPrincess.position.y = 470 - npcPrincess.height - 1.5;
-        npcPrincess.gravity = 0;
+        checkLose--;
+        if (checkLose !== 0) {
+            scrollOffset = 0;
+            reset_npc_character()
+            reset();
+        } else {
+            cancelAnimationFrame(start)
+            loseEvent();
+        }
     }
 }
-animate();
