@@ -4,36 +4,40 @@ canvas.width = 1024;
 canvas.height = 567;
 let scrollOffset = 0;
 let checkLose = 3;
-
+// let checkStart = false
 startGame();
 
 function animate() {
     let start = requestAnimationFrame(animate);
-    ctx.fillStyle = "white"
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "white"
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // draw background and hill
-    genericObjs.forEach(function (genericObj) {
-        genericObj.draw();
-    })
+        // draw background and hill
+        genericObjs.forEach(function (genericObj) {
+            genericObj.draw();
+        })
 
-    // draw platform
-    platforms.forEach(function (platform) {
-        platform.draw();
-    })
+        // draw platform
+        platforms.forEach(function (platform) {
+            platform.draw();
+        })
 
-    lifeContent(checkLose)
+        lifeContent(checkLose)
 
-    npcPrincess.draw();
+        npcPrincess.draw()
 
-    // draw Character
-    character.update();
+        // draw Character
+        character.update();
+
 
 
     if (character.position.x + character.height >= npcPrincess.position.x + 60
         && character.position.y + character.height >= npcPrincess.position.y + 30
         && character.position.x <= npcPrincess.width + npcPrincess.position.x - 30) {
         cancelAnimationFrame(start)
+        window.setTimeout(function () {
+            document.querySelector("html").style.cursor = "url(\"Img/gameCusor.png\"),auto"
+        },8500)
         winEvent()
     } else {
         if (keys.right.pressed && character.position.x < 400) {
@@ -93,6 +97,10 @@ function animate() {
             reset();
         } else {
             cancelAnimationFrame(start)
+            window.setTimeout(function () {
+                document.querySelector("html").style.cursor = "url(\"Img/gameCusor.png\"),auto"
+            },3500)
+            // document.querySelector("html").style.cursor = "url(\"Img/gameCusor.png\"),auto"
             loseEvent();
         }
     }

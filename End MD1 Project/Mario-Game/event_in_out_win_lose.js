@@ -19,7 +19,6 @@ function hideButton() {
 }
 
 function addEventButton(button) {
-    button.style.cursor = "pointer"
     button.addEventListener('mouseover', function () {
         button.style.scale = "120%"
     })
@@ -80,6 +79,9 @@ function startGame() {
         startBtn.addEventListener('click', function () {
             setTimeout(animate, 1000)
             setTimeout(hideButton, 1000)
+            window.setTimeout(function () {
+                document.querySelector("html").style.cursor = "none"
+            },1000)
         })
     }
     addEventButton(aboutBtn);
@@ -88,7 +90,6 @@ function startGame() {
         hideButton()
         createButton(backButton);
     })
-
 }
 
 //Lose Game
