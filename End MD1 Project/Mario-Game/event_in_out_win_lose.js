@@ -51,14 +51,9 @@ function startGame() {
 
     const startBtn = document.createElement('img');
     startBtn.src = 'Img/startButton.png'
-    startBtn.width = 250;
-    startBtn.height = 70;
     startBtn.className = "button"
-    startBtn.style.position = "absolute";
-    startBtn.style.top = "300px";
-    startBtn.style.left = "520px";
+    startBtn.id ="startBtn"
     addEventButton(startBtn);
-
     startBtn.onload = function () {
         setTimeout(createButton, 2500, startBtn);
     }
@@ -66,11 +61,7 @@ function startGame() {
     const backButton = new Image();
     backButton.src = 'Img/backButton.png'
     backButton.className = "button"
-    backButton.width = 150;
-    backButton.height = 70;
-    backButton.style.position = "absolute";
-    backButton.style.top = "400px";
-    backButton.style.left = "450px";
+    backButton.id = "backBtn"
     addEventButton(backButton)
     backButton.addEventListener('click', function () {
         hideButton()
@@ -82,17 +73,13 @@ function startGame() {
     aboutBoard.src = 'Img/aboutBoard.png'
     const aboutBtn = new Image();
     aboutBtn.src = 'Img/aboutButton.png'
-    aboutBtn.width = 250;
-    aboutBtn.height = 70;
     aboutBtn.className = "button"
-    aboutBtn.style.position = "absolute";
-    aboutBtn.style.top = "390px";
-    aboutBtn.style.left = "520px";
+    aboutBtn.id = "aboutBtn"
     aboutBtn.onload = function () {
         setTimeout(createButton, 3000, aboutBtn);
         startBtn.addEventListener('click', function () {
-            setTimeout(animate, 500)
-            setTimeout(hideButton, 500)
+            setTimeout(animate, 1000)
+            setTimeout(hideButton, 1000)
         })
     }
     addEventButton(aboutBtn);
@@ -142,15 +129,11 @@ function loseEvent() {
 
     const restartButton = new Image();
     restartButton.src = 'Img/restartButton.png'
-    restartButton.width = 250;
-    restartButton.height = 70;
     restartButton.className = "button"
-    restartButton.style.position = "absolute";
-    restartButton.style.top = "300px";
-    restartButton.style.left = "520px";
+    restartButton.id = "restartBtn"
     addEventButton(restartButton);
     restartButton.addEventListener('click', function () {
-        checkLose = 4;
+        checkLose = 3;
         scrollOffset = 0;
         reset_npc_character()
         reset();
@@ -163,12 +146,8 @@ function loseEvent() {
 
     const homepageButton = new Image();
     homepageButton.src = 'Img/homePageButton.png'
-    homepageButton.width = 250;
-    homepageButton.height = 70;
     homepageButton.className = "button"
-    homepageButton.style.position = "absolute";
-    homepageButton.style.top = "390px";
-    homepageButton.style.left = "520px";
+    homepageButton.id = "homepageBtn"
     addEventButton(homepageButton);
     homepageButton.addEventListener('click', function () {
         hideButton();
@@ -186,22 +165,15 @@ let countFire = 0;
 
 const fireWorkLeft = new Image();
 fireWorkLeft.src = "Img/fireWork.png";
-fireWorkLeft.style.position = 'absolute';
-fireWorkLeft.style.left = "500px";
-fireWorkLeft.style.left = "700px";
-fireWorkLeft.style.scale = "60%"
+fireWorkLeft.id = "fireWorkLeft"
 
 const fireWorkRight = new Image();
 fireWorkRight.src = "Img/fireWork.png";
-fireWorkRight.style.position = 'absolute';
-fireWorkRight.style.left = "500px";
-fireWorkRight.style.left = "200px";
-fireWorkRight.style.scale = "60%"
+fireWorkRight.id = "fireWorkRight"
 
 
 function winEvent() {
     let id = requestAnimationFrame(winEvent)
-
     let scaleIncrease = 1;
     scaleFireWork = scaleFireWork + scaleIncrease;
     fireWorkRight.style.scale = scaleFireWork + "%"
@@ -214,8 +186,8 @@ function winEvent() {
     }
     if (countFire === 3) {
         cancelAnimationFrame(id);
-        fireWorkLeft.style.display = "none";
-        fireWorkRight.style.display = "none";
+        fireWorkLeft.remove();
+        fireWorkRight.remove();
         winBackground()
     }
 }
@@ -260,12 +232,8 @@ function winContent() {
 
     const homepageWin = new Image();
     homepageWin.src = "Img/homepageWin.png"
-    homepageWin.width = 300;
-    homepageWin.height = 150;
     homepageWin.className = "button"
-    homepageWin.style.position = "absolute";
-    homepageWin.style.left = "500px";
-    homepageWin.style.top = "300px";
+    homepageWin.id = "homepageWin"
     addEventButton(homepageWin);
     homepageWin.addEventListener('click', function () {
         hideButton();
@@ -279,6 +247,7 @@ function winContent() {
         setTimeout(createButton, 3000, homepageWin)
     }
     opacity = 0;
+    countFire = 0;
 }
 
 

@@ -6,3 +6,49 @@ body {
     justify-content: center;
     height: 100vh;
 }
+#startBtn{
+    position: absolute;
+    transform: translateY(1rem);
+    width: 250px;
+    height: 75px;
+}
+#aboutBtn{
+    position: absolute;
+    width: 250px;
+    height: 75px;
+ transform: translateY(7rem);
+}
+#backBtn {
+    position: absolute;
+    transform: translate(-8rem, 6rem);
+    width: 150px;
+    height: 70px;
+}
+#restartBtn {
+    position: absolute;
+    width: 250px;
+    height: 75px;
+    transform: translateY(1rem);
+}
+#homepageBtn {
+    position: absolute;
+    width: 250px;
+    height: 75px;
+    transform: translateY(7rem);
+}
+#homepageWin {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    transform: translateY(5rem);
+}
+#fireWorkLeft {
+    position: absolute;
+    scale: 60%;
+    transform: translate(-30rem,-10rem);
+}
+#fireWorkRight {
+    position: absolute;
+    scale: 60%;
+    transform: translate(30rem, -10rem);
+}

@@ -6,12 +6,21 @@ const keys = {
         pressed: false
     }
 }
-
+let checkJump = true;
 window.addEventListener("keydown", function ({keyCode}) {
     switch (keyCode) {
         case 38:
             console.log("up")
-            character.velocity.y -= 25;
+            if (checkJump) {
+                if (character.position.y <= 0) {
+                    character.velocity.y = 0;
+                } else {
+                    character.velocity.y -= 25;
+                }
+                checkJump = false;
+                window.setTimeout(function () {checkJump = true}, 550);
+
+            }
             break;
         case 39:
             console.log("right")
@@ -38,7 +47,6 @@ window.addEventListener("keyup", function ({keyCode}) {
     switch (keyCode) {
         case 38:
             console.log("up")
-
             break;
         case 39:
             console.log("right")
