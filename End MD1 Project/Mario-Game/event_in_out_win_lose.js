@@ -140,6 +140,7 @@ function loseEvent() {
         reset();
         animate();
         hideButton();
+        document.querySelector("html").style.cursor = "none";
     })
     restartButton.onload = function () {
         setTimeout(createButton, 2500, restartButton);

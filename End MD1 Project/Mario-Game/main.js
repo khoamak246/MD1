@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = 1024;
 canvas.height = 567;
 let scrollOffset = 0;
-let checkLose = 3;
+let checkLose = 1;
 // let checkStart = false
 startGame();
 
@@ -88,6 +88,19 @@ function animate() {
             character.velocity.y = 0;
         }
     })
+
+    // key pressed "Right - Left" frame
+    if (keys.right.pressed && character.currentSprite !== character.sprite.run.right) {
+        character.currentSprite = character.sprite.run.right;
+        character.currentCropWidth = character.sprite.run.cropWidth;
+        character.width = character.sprite.run.width;
+        this.currentCropHeight = 400;
+    } else if (keys.left.pressed && character.currentSprite !== character.sprite.run.left) {
+        character.currentSprite = character.sprite.run.left;
+        character.currentCropWidth = character.sprite.run.cropWidth;
+        character.width = character.sprite.run.width;
+        this.currentCropHeight = 400;
+    }
 
     if (character.position.y >= canvas.height) {
         checkLose--;

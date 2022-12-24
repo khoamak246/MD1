@@ -25,18 +25,10 @@ window.addEventListener("keydown", function ({keyCode}) {
         case 39:
             console.log("right")
             keys.right.pressed = true;
-            character.currentSprite = character.sprite.run.right;
-            character.currentCropWidth = character.sprite.run.cropWidth;
-            character.width = character.sprite.run.width;
-            this.currentCropHeight = 400;
             break;
         case 37:
             console.log("left")
             keys.left.pressed = true;
-            character.currentSprite = character.sprite.run.left;
-            character.currentCropWidth = character.sprite.run.cropWidth;
-            character.width = character.sprite.run.width;
-            this.currentCropHeight = 400;
             break;
         case 40:
             console.log("Down")
